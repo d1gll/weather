@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+    body {
+        background: #7290B9;
+    }
+
+    .city {
+        left: calc(50% - 208px/2 - 50px);
+        top: 19px;
+        width: 75px;
+        height: 36px;
+    }
+
+    .location {
+        font-size: 30px;
+        line-height: 36px;
+        padding-right: 0px;
+    }
+
+    .change_city{
+        font-size: 15px;
+        line-height: 18px;
+        margin-top: 48px;
+    }
+
+    .strelka{
+        position: relative;
+        float: left;
+        width: 30px;
+        height: 30px;
+        margin-top: -3px;
+    }
+
+    .place {
+        font-size: 15px;
+        line-height: 18px;
+        margin-top: 48px;
+    }
+
+
+    .weather{
+        height: 220px;
+        min-width: 269px;
+        left: calc(50% - 208px/2 - 50px);
+        top: calc(50% - 220px/2 - 56.5px);
+    }
+
+    .temp{
+        font-size: 120px;
+        line-height: 155px;
+        font-family: PT Sans;
+        position: relative;
+        top: 32px;
+        right: 0px;
+        left: 65px;
+
+    }
+
+    .small{
+        left: 65px;
+        font-size: 82px;
+    }
+
+    .descript{
+        font-family: PT Sans;
+        font-size: 20px;
+        width: 220px;
+        left: 0px;
+        top: 190px;
+    }
+
+    .blocks{
+        min-width: 310px;
+        top: calc(50% - 208px/2 + 250px);
+        left: calc(50% - 208px/2 - 50px);
+    }
+
+    .block_1{
+        left: 0px;
+    }
+
+    .block_2{
+        left: 173px;
+        width: 148px;
+    }
+
+    .block_3{
+        top: 85px;
+        left: 0px;
+    }
+
+    .block_4{
+        left: 173px;
+        top: 85px;
+        width: 148px;
+    }
+
+    .text_block{
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .blocks p{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 22px;
+        /* identical to box height */
+
+
+        color: #FFFFFF;
+
+        mix-blend-mode: normal;
+        opacity: 0.6;
+    }
+
+    .regular{
+        top: 26px;
+        left: calc(50% - 208px/2 + 175px);
+    }
+
+    .regular_ring{
+        position: absolute;
+        color: #FFFFFF;
+
+        mix-blend-mode: normal;
+        opacity: 0.4;
+        margin-left: -10px;
+        margin-top: 3px;
+    }
+
+    .regular_temp{
+        height: 29px;
+        width: 77px;
+
+        mix-blend-mode: normal;
+        border: 1px solid #FFFFFF;
+        box-sizing: border-box;
+        border-radius: 8px;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+
+    .left_reg{
+        padding-top: 5px;
+        width: 37.5px;
+        height: 23px;
+        float: left;
+        text-align: center;
+        opacity: 0.4;
+    }
+
+
+    .right_reg{
+        padding-top: 5px;
+        width: 37.5px;
+        height: 23px;
+        float: right;
+        text-align: center;
+        opacity: 0.4;
+    }
+
+    .is-active{
+        background: rgba(255, 255, 255, 0.2);
+        opacity: 1;
+    }
+
+
+
+
+
+    .img {
+        left: calc(50% - 200px/2 - 35px);
+        top: calc(50% - 200px/2 + 53px);
+    }
+    .img img {
+        width: 100px;
+        height: 100px;
+
+    }

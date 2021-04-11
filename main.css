@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+body{
+    position: absolute;
+
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    background: #498CEC;
+}
+
+
+.city {
+    position: absolute;
+    width: 378px;
+    height: 95px;
+    left: 99px;
+    right: 75px;
+    top: 75px;
+
+}
+
+
+
+.location {
+    position: absolute;
+    cursor: pointer;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 60px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+
+    padding-right: 60px;
+    margin-left: -5px;
+    background: transparent;
+    border: none;
+
+}
+
+.location option{
+    color:#fff;
+    background:#369;
+}
+
+.change_city{
+    position: absolute;
+    width: 132px;
+    margin-top: 69px;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+
+    mix-blend-mode: normal;
+    opacity: 0.6;
+}
+
+.strelka{
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-top: -3px;
+}
+
+.place {
+    position: absolute;
+    margin-top: 69px;
+    margin-left: 138px;
+    width: 200px;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+
+    mix-blend-mode: normal;
+    opacity: 0.6;
+}
+

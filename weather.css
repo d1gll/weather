@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+.weather{
+    position: absolute;
+    min-width: 800px;
+    max-width: 100%;
+    height: 208px;
+    left: 99px;
+    right: 75px;
+    top: calc(50% - 208px/2 - 52px);
+
+}
+
+.temp{
+    position: absolute;
+    height: 208px;
+    left: 260px;
+    right: 75px;
+    top: calc(50% - 200px/2 - 0px);
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 180px;
+    line-height: 216px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.small{
+    left: 410px;
+}
+
+.descript{
+    position: absolute;
+    height: 48px;
+    left: 101px;
+    right: 125px;
+    top: calc(50% - 48px/2 + 130px);
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.blocks{
+    position: absolute;
+    max-width: 100%;
+    min-width: 800px;
+    height: 208px;
+    left: 101px;
+    right: 75px;
+    bottom: 0px;
+}
+
+.block_1{
+    position: absolute;
+    height: 62px;
+    width: 185px;
+    float: left;
+    left: 7.39%;
+}
+
+.block_2{
+    position: absolute;
+    height: 62px;
+    width: 159px;
+    float: left;
+    left: 30.23%;
+}
+
+.block_3{
+    position: absolute;
+    height: 62px;
+    width: 99px;
+    float: left;
+    left: 53.51%;
+}
+
+.block_4{
+    position: absolute;
+    height: 62px;
+    width: 166px;
+    float: left;
+    left: 74.3%;
+}
+
+.text_block{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 30px;
+    /* identical to box height */
+
+    color: #FFFFFF;
+}
+
+.blocks p{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+
+    mix-blend-mode: normal;
+    opacity: 0.6;
+}
+
+.regular{
+    position: absolute;
+    height: 29px;
+    width: 77px;
+    top:81px;
+    right: 75px;
+}
+
+.regular_ring{
+    position: absolute;
+    color: #FFFFFF;
+
+    mix-blend-mode: normal;
+    opacity: 0.4;
+    margin-left: -10px;
+    margin-top: 3px;
+}
+
+.regular_temp{
+    height: 29px;
+    width: 77px;
+
+    mix-blend-mode: normal;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 8px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.left_reg{
+    padding-top: 5px;
+    width: 37.5px;
+    height: 23px;
+    float: left;
+    text-align: center;
+    opacity: 0.4;
+}
+
+
+.right_reg{
+    padding-top: 5px;
+    width: 37.5px;
+    height: 23px;
+    float: right;
+    text-align: center;
+    opacity: 0.4;
+}
+
+.is-active{
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 1;
+}
+
+
+
+
+
+.img {
+    position: absolute;
+
+    left: calc(50% - 200px/2 - 130px);
+    top: calc(50% - 200px/2 - 0px);
+}
+.img img{
+    width: 200px;
+    height: 200px;
+}
