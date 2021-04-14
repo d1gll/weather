@@ -7,68 +7,53 @@
     <link rel="stylesheet" href="weather.css">
     <link rel="stylesheet" media="screen and (max-width: 900px)" href="mobile.css">
 
+    <script src="//api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script>
-
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
     <title>Погода</title>
 </head>
 <body>
-<div id="app">
-
-    <div class="regular">
-    <div class="regular_ring">
-        º
-    </div>
-
-<div class="regular_temp">
-
-    <div v-on:click="show = 1" :class="{'left_reg': activeTab !== 1, 'is-active': activeTab === 1}" @click="setActiveTab(1)" class="left_reg">
-        <a >C</a>
-    </div>
-    <div v-on:click="show = 2" :class="{'right_reg': activeTab !== 2, 'is-active': activeTab === 2}" @click="setActiveTab(2)"  class="right_reg">
-        <a>F</a>
-    </div>
-</div>
-
-</div>
-
-<div class="city">
-<div id="location">
-
-    <select size="1"  class="location" v-model="selected">
-        <option v-for="option in options" v-bind:value="option.value">
-         {{ option.text }}
-        </option>
-    </select>
-
-<div class="change_city">Сменить город </div>
-
-<div class="place">
-    <div class="strelka">
-        <img src="img/location.svg">
-    </div>
-    Мое местоположение</div>
-</div>
-</div>
-
-<div class="weather">
 
 
+<script type="text/x-template" id="autocomplete">
+    <div
+            class="autocomplete"
+            role="combobox"
+            aria-haspopup="listbox"
+            :aria-expanded="isOpen"
+    >
 
+        <div class="regular">
+            <div class="regular_ring">
+                º
+            </div>
+            <div class="regular_temp">
+                <div v-on:click="show = 1" :class="{'left_reg': activeTab !== 1, 'is-active': activeTab === 1}" @click="setActiveTab(1)" class="left_reg">
+                    <a >C</a>
+                </div>
+                <div v-on:click="show = 2" :class="{'right_reg': activeTab !== 2, 'is-active': activeTab === 2}" @click="setActiveTab(2)"  class="right_reg">
+                    <a>F</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="weather">
             <div v-if="show==1" class="temp">
                 {{ info_cel }}º
             </div>
 
-            <div v-else class="temp small">
+            <div v-else class="temp">
                 {{ info_fal }}º
             </div>
 
             <div  v-for="discr in discipt.weather"
                   class="">
                 <div class="descript">
-                {{ discr.description }}
+                    {{ discr.description }}
                 </div>
+
                 <div class="img">
                     <img v-if="discr.description=='ясно'" src="img/sun.svg"
                          alt="Солнце">
@@ -82,46 +67,90 @@
                          alt="Облачно">
                 </div>
             </div>
+        </div>
+
+
+        <div class="city">
+            <div id="location">
+                <div v-if="in_active==1">
+                    <input
+                            type="text"
+                            @input="onChange"
+                            v-model="search"
+                            @keyup.down="onArrowDown" @keyup.up="onArrowUp" @keyup.enter="onEnter" aria-multiline="false"
+                            role="searchbox"
+                            aria-autocomplete="list"
+                            aria-controls="autocomplete-results"
+                            :aria-labelledby="ariaLabelledBy"
+                            class="input_active"
+                            placeholder="Введите город"
+                    />
+                    <div class="but_OK" v-on:click="gogo">ОК</div>
+                    <ul id="autocomplete-results" v-show="isOpen" class="autocomplete-results" role="listbox">
+                        <li class="loading" v-if="isLoading">
+                            Loading results...
+                        </li>
+                        <li v-else v-for="(result, i) in results" :key="i" @click="setResult(result)" class="autocomplete-result" :class="{ 'is-active': isSelected(i) }"
+                            role="option"
+                            :id="getId(i)"
+                            :aria-selected="isSelected(i)">
+                            {{ result }}
+                        </li>
+                    </ul>
+                </div>
+
+                <div v-else >
+                    <label class="label_city">{{nightcity_label}}</label>
+                    <div v-on:click="in_active = 1" style="cursor: pointer" class="change_city">Сменить город</div>
+                    <div style="cursor: pointer" v-on:click="place" class="place">
+                        <div class="strelka">
+                            <img src="img/location.svg">
+                        </div>
+                        Мое местоположение
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="blocks">
+            <div class="block_1">
+                <p> Ветер </p>
+
+                <div class="block_1_val text_block">
+                    {{ wind }} м/с
+                </div>
+            </div>
+
+            <div class="block_2">
+                <p> Давление </p>
+                <div class="block_2_val text_block">
+                    {{ dav }}  мм рт. ст.
+                </div>
+            </div>
+
+            <div class="block_3">
+                <p> Влажность </p>
+                <div class="block_3_val text_block">
+                    {{ vlaz }} %
+                </div>
+            </div>
+
+            <div class="block_4">
+                <p> Вероятность дождя </p>
+                <div class="block_4_val text_block">
+                    {{ rain }} %
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<div id="app">
+    <autocomplete :items="itemlist" aria-labelled-by="fruitlabel" />
 </div>
 
-<div class="blocks">
-    <div class="block_1">
-<p> Ветер </p>
-
-        <div class="block_1_val text_block">
-            {{ wind }} м/с
-        </div>
-    </div>
-
-
-    <div class="block_2">
-<p> Давление </p>
-        <div class="block_2_val text_block">
-            {{ dav }}  мм рт. ст.
-        </div>
-    </div>
-
-
-    <div class="block_3">
-<p> Влажность </p>
-        <div class="block_3_val text_block">
-            {{ vlaz }} %
-        </div>
-    </div>
-
-
-    <div class="block_4">
-        <p> Вероятность дождя </p>
-        <div class="block_4_val text_block">
-            {{ rain }} %
-        </div>
-    </div>
-</div>
-
-    <script src="weather_js.js"></script>
-
-</div>
-
+<script src="city.js"></script>
 
 </body>
 </html>

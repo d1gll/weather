@@ -5,9 +5,10 @@
 
     .city {
         left: calc(50% - 208px/2 - 50px);
-        top: 19px;
+        top: 20px;
         width: 75px;
         height: 36px;
+        z-index: 0;
     }
 
     .location {
@@ -16,10 +17,20 @@
         padding-right: 0px;
     }
 
+    #location{
+        width: 200px;
+        }
+
+.autocomplete-result {
+    font-size: 15px;
+    line-height: 18px;
+    margin-top: 10px;
+}
+
     .change_city{
         font-size: 15px;
         line-height: 18px;
-        margin-top: 48px;
+        margin-top: 10px;
     }
 
     .strelka{
@@ -33,9 +44,27 @@
     .place {
         font-size: 15px;
         line-height: 18px;
-        margin-top: 48px;
+        margin-top: 10px;
     }
 
+.input_active{
+    width: 300px;
+    height: 53px;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.but_OK{
+    font-size: 15px;
+    line-height: 18px;
+    left: 269px;
+    top: 20px;
+}
+
+.label_city{
+    font-size: 30px;
+    line-height: 36px;
+}
 
     .weather{
         height: 220px;
@@ -64,7 +93,7 @@
         font-family: PT Sans;
         font-size: 20px;
         width: 220px;
-        left: 0px;
+        left: 50px;
         top: 190px;
     }
 
