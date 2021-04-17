@@ -40,37 +40,45 @@
         </div>
 
         <div class="weather">
-            <div v-if="show==1" class="temp">
-                {{ info_cel }}º
-            </div>
 
-            <div v-else class="temp">
-                {{ info_fal }}º
-            </div>
+            <div class="temp">
 
-            <div  v-for="discr in discipt.weather"
-                  class="">
-                <div class="descript">
-                    {{ discr.description }}
-                </div>
+                <div v-for="weather_pic in discipt.weather" class="img">
 
-                <div class="img">
-                    <img v-if="discr.description=='ясно'" src="img/sun.svg"
+                    <img v-if="weather_pic.description=='ясно'" src="img/sun.svg"
                          alt="Солнце">
-                    <img v-if="discr.description=='небольшой дождь'" src="img/rain.svg"
+                    <img v-if="weather_pic.description=='небольшой дождь'" src="img/rain.svg"
                          alt="Дождь">
-                    <img v-if="discr.description=='дождь'" src="img/strom.svg"
+                    <img v-if="weather_pic.description=='дождь'" src="img/strom.svg"
                          alt="Шторм">
-                    <img v-if="discr.description=='облачно с прояснениями'|| discr.description=='небольшая облачность'" src="img/partly%20cloudy.svg"
+                    <img v-if="weather_pic.description=='облачно с прояснениями'
+                                    || discr.description=='небольшая облачность'
+                                    || discr.description=='туман'
+                                    || discr.description=='небольшой снег'
+                        " src="img/partly%20cloudy.svg"
                          alt="Пасмурно">
-                    <img v-if="discr.description=='пасмурно'" src="img/cloud.svg"
+                    <img v-if="weather_pic.description=='пасмурно'" src="img/cloud.svg"
                          alt="Облачно">
                 </div>
+
+                <div v-if="show==1"  class="num__temp">
+                {{ info_cel }}º
+                </div>
+
+                <div v-else class="num__temp">
+                    {{ info_fal }}º
+                </div>
+
+
+                    <div v-for="discr in discipt.weather" class="descript">
+                        {{ discr.description }}
+                    </div>
+
+                </div>
+
             </div>
-        </div>
 
-
-        <div class="city">
+        <div class="city" :class="{'city_active': in_active == 1}">
             <div id="location">
                 <div v-if="in_active==1">
                     <input
@@ -106,7 +114,7 @@
                         <div class="strelka">
                             <img src="img/location.svg">
                         </div>
-                        Мое местоположение
+                        <p>Мое местоположение</p>
                     </div>
                 </div>
 
@@ -114,32 +122,46 @@
         </div>
 
         <div class="blocks">
-            <div class="block_1">
+            <div  v-if="show==1" class="block_1">
                 <p> Ветер </p>
 
                 <div class="block_1_val text_block">
-                    {{ wind }} м/с
+                    {{ wind }} м/с, западный
+                </div>
+            </div>
+            <div  v-else class="block_1">
+                <p> Ветер </p>
+
+                <div class="block_1_val text_block">
+                    {{ wind_far }} mph, west
                 </div>
             </div>
 
-            <div class="block_2">
+            <div v-if="show==1" class="block_2">
                 <p> Давление </p>
                 <div class="block_2_val text_block">
                     {{ dav }}  мм рт. ст.
                 </div>
             </div>
 
+            <div v-else class="block_2">
+                <p> Давление </p>
+                <div class="block_2_val text_block">
+                    {{ dav }}  mmHg
+                </div>
+            </div>
+
             <div class="block_3">
                 <p> Влажность </p>
                 <div class="block_3_val text_block">
-                    {{ vlaz }} %
+                    {{ vlaz }}%
                 </div>
             </div>
 
             <div class="block_4">
                 <p> Вероятность дождя </p>
                 <div class="block_4_val text_block">
-                    {{ rain }} %
+                    {{ rain }}%
                 </div>
             </div>
         </div>

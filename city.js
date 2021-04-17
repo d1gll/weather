@@ -40,7 +40,8 @@ const Autocomplete = {
             info_fal:'',
             nightcity_label:'Париж',
             in_active:'0',
-
+            wind_far:'',
+            discr:'',
 
         };
     },
@@ -105,6 +106,7 @@ const Autocomplete = {
                     this.info_fal = Math.round(response.data.main.temp * faren);
                     this.discipt = response.data;
                     this.wind = response.data.wind.speed;
+                    this.wind_far = Math.round(response.data.wind.speed * 2.237);
                     this.dav = Math.round(response.data.main.pressure/1.333);
                     this.vlaz = response.data.main.humidity;
                     this.rain = response.data.clouds.all;

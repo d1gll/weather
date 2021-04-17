@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@font-face {
+    font-family: Lato_my; /* Гарнитура шрифта */
+    src: url(fonts/9622.ttf); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: Lato_reg; /* Гарнитура шрифта */
+    src: url(fonts/Lato.ttf); /* Путь к файлу со шрифтом */
+}
+
+
 body{
     position: absolute;
 
@@ -13,18 +24,23 @@ body{
 
 .city {
     position: absolute;
-    width: 596px;
-    height: 95px;
+    width: 579px;
+    height: 97px;
     left: 99px;
     right: 75px;
     top: 75px;
     z-index: 10;
 }
 
+.city_active{
+    left: 96px;
+    top: 81px;
+}
+
 .location {
     position: absolute;
     cursor: pointer;
-    font-family: Lato;
+    font-family: Lato_my;
     font-style: normal;
     font-weight: normal;
     font-size: 50px;
@@ -54,15 +70,13 @@ body{
     z-index: 101;
     width: 549px;
     height: 97px;
-    background: #FFFFFF;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
-    font-family: Lato;
+    font-family: Lato_reg;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
     line-height: 36px;
-
+    border: 0px;
 
     color: #000000;
 }
@@ -73,7 +87,7 @@ body{
     left: 516px;
     top: 31px;
     color: #1086FF;
-    font-family: Lato;
+    font-family: Lato_reg;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -81,13 +95,13 @@ body{
 }
 
 .label_city{
-    font-family: Lato;
+    font-family: Lato_reg;
     font-style: normal;
     font-weight: normal;
     font-size: 50px;
     line-height: 60px;
     /* identical to box height */
-
+    margin-left: -3px;
 
     color: #FFFFFF;
 }
@@ -96,12 +110,12 @@ body{
     position: absolute;
     width: 132px;
 
-    font-family: Lato;
+    font-family: Lato_my;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 22px;
-    /* identical to box height */
+    top: 70px;
 
 
     color: #FFFFFF;
@@ -120,14 +134,15 @@ body{
 
 .place {
     position: absolute;
-    margin-left: 138px;
-    width: 200px;
-
-    font-family: Lato;
+    margin-left: 150px;
+    width: 243px;
+    height: 21px;
+    font-family: Lato_my;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 22px;
+    top: 70px;
     /* identical to box height */
 
 
@@ -135,6 +150,13 @@ body{
 
     mix-blend-mode: normal;
     opacity: 0.6;
+}
+
+.place p{
+    float: left;
+    width: 181px;
+    margin-left: 4px;
+    margin-top: 0;
 }
 
 .autocomplete-results {
@@ -152,7 +174,7 @@ body{
     text-align: left;
     padding: 4px 2px;
     cursor: pointer;
-    font-family: Lato;
+    font-family: Lato_my;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;

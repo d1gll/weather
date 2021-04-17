@@ -1,14 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@font-face {
+    font-family: Lato_my; /* Гарнитура шрифта */
+    src: url(fonts/9622.ttf); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: Lato_reg; /* Гарнитура шрифта */
+    src: url(fonts/Lato.ttf); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: PT_sans; /* Гарнитура шрифта */
+    src: url(fonts/PTsans.ttf); /* Путь к файлу со шрифтом */
+}
+
+
     body {
         background: #7290B9;
     }
 
     .city {
-        left: calc(50% - 208px/2 - 50px);
-        top: 20px;
+        left: calc(50% - 208px/2 - 62px);
+        top: 19px;
         width: 75px;
         height: 36px;
         z-index: 0;
+    }
+
+    .city_active{
+        top: 21px;
+        left: calc(50% - 208px/2 - 64px);
     }
 
     .location {
@@ -21,6 +42,16 @@
         width: 200px;
         }
 
+
+.num__temp{
+    font-size: 90px;
+    line-height: 155px;
+    font-family: Lato_my;
+    width: 150px;
+    height: 150px;
+    margin-left: 16px;
+}
+
 .autocomplete-result {
     font-size: 15px;
     line-height: 18px;
@@ -30,21 +61,18 @@
     .change_city{
         font-size: 15px;
         line-height: 18px;
-        margin-top: 10px;
+        top: 53px;
     }
 
     .strelka{
-        position: relative;
-        float: left;
-        width: 30px;
-        height: 30px;
-        margin-top: -3px;
+        margin-top: -7px;
     }
 
     .place {
         font-size: 15px;
         line-height: 18px;
-        margin-top: 10px;
+        top: 53px;
+        margin-left: 133px;
     }
 
 .input_active{
@@ -74,13 +102,9 @@
     }
 
     .temp{
-        font-size: 120px;
-        line-height: 155px;
-        font-family: PT Sans;
+
         position: relative;
-        top: 32px;
-        right: 0px;
-        left: 65px;
+        top: 45px;
 
     }
 
@@ -90,17 +114,18 @@
     }
 
     .descript{
-        font-family: PT Sans;
+        font-family: Lato_my;
         font-size: 20px;
-        width: 220px;
-        left: 50px;
-        top: 190px;
+        width: 280px;
+        margin-left: 15px;
+        margin-top: -10px;
     }
 
     .blocks{
         min-width: 310px;
+        height: 160px;
         top: calc(50% - 208px/2 + 250px);
-        left: calc(50% - 208px/2 - 50px);
+        left: calc(50% - 208px/2 - 62px);
     }
 
     .block_1{
@@ -108,7 +133,7 @@
     }
 
     .block_2{
-        left: 173px;
+        left: 193px;
         width: 148px;
     }
 
@@ -118,23 +143,21 @@
     }
 
     .block_4{
-        left: 173px;
+        left: 193px;
         top: 85px;
         width: 148px;
     }
 
     .text_block{
-        font-size: 15px;
-        line-height: 18px;
+        font-size: 18px;
+        line-height: 22px;
     }
 
     .blocks p{
-        font-family: Lato;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 22px;
-        /* identical to box height */
+        font-size: 15px;
+        line-height: 18px;
+
+        margin-bottom: 2px;
 
 
         color: #FFFFFF;
@@ -149,45 +172,19 @@
     }
 
     .regular_ring{
-        position: absolute;
-        color: #FFFFFF;
-
-        mix-blend-mode: normal;
-        opacity: 0.4;
-        margin-left: -10px;
+        font-family: PT_sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 23px;
         margin-top: 3px;
+        margin-left: -16px;
     }
 
     .regular_temp{
-        height: 29px;
-        width: 77px;
-
-        mix-blend-mode: normal;
-        border: 1px solid #FFFFFF;
-        box-sizing: border-box;
-        border-radius: 8px;
-        color: #FFFFFF;
-        cursor: pointer;
+        font-family: Lato_reg;
     }
 
-    .left_reg{
-        padding-top: 5px;
-        width: 37.5px;
-        height: 23px;
-        float: left;
-        text-align: center;
-        opacity: 0.4;
-    }
-
-
-    .right_reg{
-        padding-top: 5px;
-        width: 37.5px;
-        height: 23px;
-        float: right;
-        text-align: center;
-        opacity: 0.4;
-    }
 
     .is-active{
         background: rgba(255, 255, 255, 0.2);
@@ -199,11 +196,13 @@
 
 
     .img {
-        left: calc(50% - 200px/2 - 35px);
-        top: calc(50% - 200px/2 + 53px);
+        width: 100px;
+        margin-left: 30px;
+        margin-top: 20px;
     }
     .img img {
         width: 100px;
         height: 100px;
+        margin-left: 12px;
 
     }
